@@ -96,3 +96,5 @@ __pycache__
 /app/static/css/
 /node_modules/
 /bower_components/
+
+coba.py
