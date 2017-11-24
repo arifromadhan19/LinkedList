@@ -14,6 +14,11 @@ class LinkedList:
             print (temp.data),
             temp = temp.next
 
+    # def printList2(self, next):
+    #     if self.head != None:
+    #         self.printList2(self.head.next)
+    #         print(self.head.data)
+
     def InsertTailNode(self, data):
 
         if (self.head == None):
@@ -58,6 +63,30 @@ class LinkedList:
         self.head.next = self.head.next.next
         return temp
 
+    def print_reverse_iterative(self):
+        if self.head:
+            stack = [self.head]
+            while stack[-1].next:
+                node = stack[-1]
+                stack.append(node.next)
+            while stack:
+                node = stack.pop()
+                print(node.data)
+
+    def Reverse(self):
+        current = self.head
+        previous = None
+        next = None
+
+        while current is not None:
+            next = current.next
+            current.next = previous
+
+            previous = current
+            current = next
+
+        return previous
+
 
 if __name__ == '__main__':
     llist = LinkedList()
@@ -76,5 +105,17 @@ if __name__ == '__main__':
     llist.InsertTailNode(4)
 
     # llist.Delete(2)
+    # llist.reverse()
+    print("\nlinked list")
+    # llist.printList()
 
+    print("\nReverse linked list")
+
+    # llist.print_reverse_iterative()
+
+
+
+    llist.Reverse()
     llist.printList()
+
+
